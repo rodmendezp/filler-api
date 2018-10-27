@@ -1,5 +1,6 @@
 class GameQueueStatus:
-    def __init__(self, game, processing, locked, jobs_available):
+    def __init__(self, id, game, processing, locked, jobs_available):
+        self.id = id
         self.game = game
         self.processing = processing
         self.locked = locked
@@ -7,7 +8,8 @@ class GameQueueStatus:
 
 
 class CustomQueueStatus:
-    def __init__(self, game, streamer, user, processing, locked, jobs_available):
+    def __init__(self, id, game, streamer, user, processing, locked, jobs_available):
+        self.id = id
         self.game = game
         self.streamer = streamer
         self.user = user
@@ -17,13 +19,10 @@ class CustomQueueStatus:
 
 
 class FillerGame:
-    def __init__(self, id, name, twid):
-        self.id = id
-        self.twid = twid
+    def __init__(self, name):
         self.name = name
 
 
 class FillerStreamer:
-    def __init__(self, id, name):
-        self.id = id
+    def __init__(self, name):
         self.name = name
