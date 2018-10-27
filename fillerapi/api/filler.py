@@ -87,6 +87,10 @@ class FillerGameAPI(BaseRESTObjectAPI):
     def __init__(self):
         super().__init__(FILLER_GAME_URL, FillerGame)
 
+    def get_objects_response(self, params=None):
+        response = self._request_get(self.path, params)
+        return response
+
 
 class FillerStreamerAPI(BaseRESTObjectAPI):
     def __init__(self):
