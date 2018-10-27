@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='fillerapi',
-      version='0.101',
+      version='0.102',
       description='API Client for Filler',
       author='Rodrigo Mendez',
       author_email='rodmendezp@gmail.com',

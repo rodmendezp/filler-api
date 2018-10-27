@@ -33,24 +33,24 @@ class FillerClient(object):
     @property
     def game_queue(self):
         if not self._game_queue:
-            self._game_queue = GameQueueAPI
+            self._game_queue = GameQueueAPI()
         return self._game_queue
 
     @property
     def custom_queue(self):
         if not self._custom_queue:
-            self._custom_queue = CustomQueueAPI
+            self._custom_queue = CustomQueueAPI()
         return self._custom_queue
 
     @property
     def filler_game(self):
         if not self._filler_game:
-            self._filler_game = FillerGameAPI
+            self._filler_game = FillerGameAPI()
         return self._filler_game
 
     @property
     def filler_streamer(self):
         if not self._filler_streamer:
-            self._filler_streamer = FillerStreamerAPI
+            self._filler_streamer = FillerStreamerAPI()
         return self._filler_streamer
 
