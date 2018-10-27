@@ -91,3 +91,17 @@ class FillerGameAPI(BaseRESTObjectAPI):
 class FillerStreamerAPI(BaseRESTObjectAPI):
     def __init__(self):
         super().__init__(FILLER_STREAMER_URL, FillerGame)
+
+    def get_objects(self, params=None, limit=100, offset=0):
+        if params:
+            print('Params are not allowed till streamer filter returns output that can be handled by the constructor')
+            params = None
+        return super().get_objects(params, limit, offset)
+
+    def get_game_default_streamers(self, game):
+        response = self._request_get(self.path, {'game_defaults': game})
+        return response
+
+    def get_game_current_streamers(self, game):
+        response = self._request_get(self.path, {'game': game})
+        return response
