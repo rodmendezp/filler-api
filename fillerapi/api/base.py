@@ -1,6 +1,7 @@
 import requests
 from rest_framework import status
 from requests.compat import urljoin
+from django.http import HttpResponse
 from fillerapi.constants import BASE_URL
 
 
@@ -17,7 +18,7 @@ class FillerAPI(object):
         headers = self._get_request_headers()
         response = requests.get(url, params=params, headers=headers)
         response.raise_for_status()
-        return response
+        return HttpResponse(response)
 
     def _request_post(self, path, data=None, params=None, url=BASE_URL):
         url = urljoin(url, path)
