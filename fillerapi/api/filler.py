@@ -102,6 +102,10 @@ class FillerStreamerAPI(BaseRESTObjectAPI):
             params = None
         return super().get_objects(params, limit, offset)
 
+    def get_objects_response(self, params=None):
+        response = self._request_get(self.path, params)
+        return response
+
     def get_game_default_streamers(self, game):
         response = self._request_get(self.path, {'game_defaults': game})
         return response
